@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MovieVerse | Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="logo">
+      <h2>MovieVerse</h2>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search movies...">
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="nav-links">
+      <a href="watchlist.html">Watchlist</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Discover Trending Movies 🎬</h1>
+    <p>Search, explore details, watch trailers and build your watchlist.</p>
+  </header>
+
+  <section class="movies-section">
+    <h2 id="sectionTitle">Trending Movies</h2>
+    <div id="moviesContainer" class="movies-container"></div>
+    <p id="loadingText" style="text-align:center; margin:20px; display:none;">
+  Loading more movies...
+</p>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

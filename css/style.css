@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  background: url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4")
+    no-repeat center center/cover;
+  background-attachment: fixed;
+  color: white;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: -1;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #facc15;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-left: 15px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+/* SEARCH */
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  padding: 12px 15px;
+  width: 280px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 0.95rem;
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-box button {
+  padding: 12px 18px;
+  border: none;
+  cursor: pointer;
+  background: #facc15;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #eab308;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7),
+    rgba(15, 23, 42, 0.6)
+  );
+
+  border-radius: 20px;
+  margin: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+  font-size: 2.7rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #facc15;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* MOVIE SECTION */
+.movies-section {
+  padding: 20px;
+}
+
+.movies-section h2 {
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  color: #ffcc00;
+}
+
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* MOVIE CARD */
+.movie-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.movie-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.6);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.movie-card:hover img {
+  filter: brightness(0.9);
+}
+
+.movie-info {
+  padding: 12px;
+}
+
+.movie-info h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.movie-info p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* MOVIE DETAILS PAGE */
+.movie-details {
+  display: flex;
+  gap: 25px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.movie-details img {
+  width: 280px;
+  border-radius: 10px;
+}
+
+.movie-text {
+  max-width: 600px;
+}
+
+.movie-text h1 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.movie-text p {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: #dddddd;
+}
+
+.btn {
+  padding: 10px 15px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #e6b800;
+}
+
+/* CAST */
+.cast-section {
+  padding: 20px;
+}
+
+.cast-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px;
+}
+
+.cast-card {
+  min-width: 120px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cast-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.cast-card p {
+  padding: 5px;
+  font-size: 0.85rem;
+  color: #cccccc;
+}
+
+/* TRAILER */
+.trailer-section {
+  padding: 20px;
+}
+
+iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  border-radius: 10px;
+  border: none;
+}
+.remove-btn {
+  background: red;
+  color: white;
+  margin-top: 10px;
+}
+
+.remove-btn:hover {
+  background: darkred;
+}
