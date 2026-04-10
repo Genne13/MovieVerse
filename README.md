@@ -165,3 +165,4 @@ MIT License - feel free to use this project for learning or personal use.
 - Movie data provided by [The Movie Database (TMDB)](https://www.themoviedb.org/)
 - Icons and emojis for mood selection
 - Google Fonts (Poppins) for typography
+# MovieVerse
