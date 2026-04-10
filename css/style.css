@@ -279,3 +279,246 @@ iframe {
 .remove-btn:hover {
   background: darkred;
 }
+
+/* MOOD BUTTON */
+.mood-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 30px;
+  font-weight: bold;
+  color: white;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  margin-left: 15px;
+}
+
+.mood-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+}
+
+.mood-btn span {
+  font-size: 1.2rem;
+}
+
+/* MOOD MODAL */
+.mood-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mood-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.mood-modal-content {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mood-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  transition: 0.3s;
+  line-height: 1;
+}
+
+.mood-close:hover {
+  color: #facc15;
+  transform: rotate(90deg);
+}
+
+.mood-modal h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #facc15;
+  text-align: center;
+}
+
+.mood-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 30px;
+}
+
+/* MOOD GRID */
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.mood-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mood-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  border-color: #facc15;
+}
+
+.mood-emoji {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.mood-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.mood-desc {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+}
+
+/* CUSTOM MOOD SECTION */
+.custom-mood-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 25px;
+}
+
+.custom-mood-section p {
+  text-align: center;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.custom-mood-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.custom-mood-input input {
+  flex: 1;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.custom-mood-input input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.custom-mood-input input:focus {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.custom-mood-input button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #facc15;
+  color: #1a1a2e;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.custom-mood-input button:hover {
+  background: #eab308;
+}
+
+/* QUICK MOOD CHIPS */
+.quick-moods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.quick-mood-chip {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.quick-mood-chip:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #facc15;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .search-box {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-box input {
+    width: 200px;
+  }
+
+  .mood-btn {
+    margin-left: 0;
+  }
+
+  .mood-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .custom-mood-input {
+    flex-direction: column;
+  }
+
+  .custom-mood-input button {
+    width: 100%;
+  }
+}

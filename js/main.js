@@ -1,5 +1,6 @@
 const loadingText = document.getElementById("loadingText");
 import { fetchData, fetchSearchData, IMG_URL } from "./api.js";
+import { initMoodFeature, getCurrentMood, loadMoreMoodMovies, resetMoodState, setMoodSelectedCallback } from "./mood.js";
 
 const moviesContainer = document.getElementById("moviesContainer");
 const searchBtn = document.getElementById("searchBtn");
@@ -9,7 +10,19 @@ const sectionTitle = document.getElementById("sectionTitle");
 let currentPage = 1;
 let currentQuery = "";
 let isLoading = false;
-let mode = "trending"; // trending or search
+let mode = "trending"; // trending, search, or mood
+
+// Initialize mood feature
+initMoodFeature();
+
+// Set up callback for when mood is selected
+setMoodSelectedCallback((mood) => {
+  mode = "mood";
+  if (mood === null) {
+    // Custom mood search - reset mood state but keep mode
+    resetMoodState();
+  }
+});
 
 // DISPLAY MOVIES (append, not replace)
 function displayMovies(movies) {
@@ -74,6 +87,7 @@ searchBtn.addEventListener("click", () => {
   mode = "search";
   currentQuery = query;
   currentPage = 1;
+  resetMoodState();
 
   sectionTitle.innerText = `Search Results for: "${query}"`;
   moviesContainer.innerHTML = "";
@@ -91,8 +105,10 @@ window.addEventListener("scroll", () => {
 
     if (mode === "trending") {
       loadTrendingMovies();
-    } else {
+    } else if (mode === "search") {
       loadSearchMovies(currentQuery);
+    } else if (mode === "mood") {
+      loadMoreMoodMovies();
     }
   }
 });
